@@ -1,6 +1,6 @@
 export const devuiCustomComponentsThemeData = {
   'devui-btn-sm-padding': '0 12px',
-  'devui-btn-padding': '0 16px',
+  'devui-btn-padding': '0 12px',
   'devui-btn-lg-padding': '0 20px',
   'devui-btn-common-bg': '#EBEBEB',
   'devui-btn-common-border-color': 'transparent',
