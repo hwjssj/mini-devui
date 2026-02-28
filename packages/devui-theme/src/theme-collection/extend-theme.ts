@@ -224,7 +224,7 @@ export const galaxyTheme: Theme = new Theme({
     'devui-icon-fill-active-hover': '#ced1db',
     'devui-border-radius': '4px',
     'devui-border-radius-feedback': '4px',
-    'devui-border-radius-card': '8px',
+    'devui-border-radius-card': '16px',
     'devui-font-size': '14px',
     'devui-font-size-md': '14px',
     'devui-font-size-card-title': '16px',

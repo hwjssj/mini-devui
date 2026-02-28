@@ -246,7 +246,7 @@ export const devuiInitialThemeData = {
   'devui-shadow-length-fullscreen-overlay': '0 10px 24px 0',
   'devui-border-radius': '4px',
   'devui-border-radius-feedback': '4px',
-  'devui-border-radius-card': '8px',
+  'devui-border-radius-card': '16px',
   'devui-border-radius-full': '100px',
   'devui-font-size': '16px',
   'devui-font-size-card-title': '16px',

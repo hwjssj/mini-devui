@@ -124,7 +124,7 @@ export const devuiLightTheme: Theme = new Theme({
     // 圆角
     'devui-border-radius': '2px',
     'devui-border-radius-feedback': '4px',
-    'devui-border-radius-card': '6px',
+    'devui-border-radius-card': '16px',
     'devui-border-radius-full': '100px',
     // 阴影
     'devui-shadow-length-base': '0 2px 6px 0',

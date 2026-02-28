@@ -111,7 +111,7 @@ const theme = {
   // 圆角
   'devui-border-radius': '2px',
   'devui-border-radius-feedback': '4px',
-  'devui-border-radius-card': '6px',
+  'devui-border-radius-card': '16px',
   // 阴影
   'devui-shadow-length-base': '0 1px 4px 0',
   'devui-shadow-length-slide-left': '-2px 0 8px 0',
