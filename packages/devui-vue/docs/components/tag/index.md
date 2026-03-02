@@ -30,8 +30,9 @@
     <d-tag color="red-w98">red-w98</d-tag>
     <d-tag color="pink-w98">pink-w98</d-tag>
     <d-tag color="purple-w98">purple-w98</d-tag>
-    <d-tag color="#aa2116">#aa2116</d-tag>
-    <d-tag color="#007d65">#007d65</d-tag>
+    <d-tag color="#50D4AB">标签</d-tag>
+    <d-tag color="#FA9841">标签</d-tag>
+    <d-tag color="#F66F6A">标签</d-tag>
   </div>
 </template>
 <script>
@@ -89,8 +90,10 @@ export default defineComponent({
 ```vue
 <template>
   <div class="tag-demo-wrapper">
-    <d-tag type="primary" :checked="isChecked" @click="tagClick">不要点我呀</d-tag>
-    <d-tag color="#39afcc" :checked="isChecked" @click="tagClick">不要点我呀</d-tag>
+    <d-tag color="#50D4AB" :checked="isChecked" @click="tagClick">标签</d-tag>
+    <d-tag color="#50D4AB" size='sm' :checked="isChecked" @click="tagClick">标签</d-tag>
+    <d-tag color="#FA9841" :checked="isChecked" @click="tagClick">标签</d-tag>
+    <d-tag color="#FA9841" size='sm' :checked="isChecked" @click="tagClick">标签</d-tag>
   </div>
 </template>
 <script>

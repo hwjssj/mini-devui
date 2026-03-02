@@ -1,7 +1,7 @@
 @import '../../../../styles-var/devui-var.scss';
 
 $devui-tab-options-bg: $devui-brand-foil;
-$devui-tab-slider-bg: $devui-list-item-hover-bg;
+$devui-tab-slider-bg: $devui-list-item-active-hover-bg;
 
 :host {
   display: block;
@@ -43,7 +43,7 @@ $devui-tab-slider-bg: $devui-list-item-hover-bg;
     &.active,
     &:hover:not(.disabled) {
       & a {
-        color: $devui-brand;
+        color: $devui-text;
       }
     }
   }
@@ -62,7 +62,7 @@ $devui-tab-slider-bg: $devui-list-item-hover-bg;
 
   li.active::after {
     width: 100%;
-    background: $devui-brand;
+    background: $devui-text;
   }
 
   .#{$devui-prefix}-tabs__new-tab {
@@ -102,7 +102,7 @@ $devui-tab-slider-bg: $devui-list-item-hover-bg;
       background: $devui-global-bg;
 
       & span > a {
-        color: $devui-brand;
+        color: $devui-text;
         padding: 0 16px;
       }
     }
@@ -120,7 +120,7 @@ $devui-tab-slider-bg: $devui-list-item-hover-bg;
     &:hover:not(.disabled) {
       & span > a {
         &:hover {
-          color: $devui-brand;
+          color: $devui-text;
           background: transparent;
         }
       }
@@ -164,7 +164,7 @@ $devui-tab-slider-bg: $devui-list-item-hover-bg;
       border: none;
       color: $devui-aide-text;
       line-height: 28px;
-      padding: 0 16px;
+      padding: 0 8px;
 
       &:hover,
       &:focus,
@@ -185,21 +185,21 @@ $devui-tab-slider-bg: $devui-list-item-hover-bg;
     &.active,
     &:hover:not(.disabled) {
       & a {
-        color: $devui-brand-active;
+        color: $devui-text;
 
         &:hover {
-          color: $devui-brand-active;
+          color: $devui-text;
           background: transparent;
         }
       }
     }
 
     &.active {
-      text-shadow: 0 0 0.7px $devui-brand;
+      text-shadow: 0 0 0.7px $devui-text;
     }
 
     &:hover:not(.active):not(.disabled) {
-      color: $devui-brand-active;
+      color: $devui-text;
     }
   }
 
@@ -218,6 +218,7 @@ $devui-tab-slider-bg: $devui-list-item-hover-bg;
   background-color: $devui-base-bg;
 
   > li {
+    height: 39px;
     cursor: pointer;
     position: relative;
     padding: 8px 16px;
@@ -253,13 +254,13 @@ $devui-tab-slider-bg: $devui-list-item-hover-bg;
       border-bottom-color: transparent;
 
       & a {
-        color: $devui-brand-active;
+        color: $devui-text;
       }
     }
 
     &:hover:not(.active):not(.disabled) {
       a {
-        color: $devui-brand;
+        color: $devui-text;
       }
     }
   }
@@ -361,7 +362,7 @@ $devui-tab-slider-bg: $devui-list-item-hover-bg;
 
     > li.active::before {
       height: 100%;
-      background: $devui-brand;
+      background: $devui-text;
     }
   }
 
@@ -394,7 +395,7 @@ $devui-tab-slider-bg: $devui-list-item-hover-bg;
     > li.active::after {
       height: 100%;
       width: 2px;
-      background: $devui-brand;
+      background: $devui-text;
     }
   }
 }

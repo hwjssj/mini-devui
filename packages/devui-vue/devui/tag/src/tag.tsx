@@ -31,7 +31,7 @@ export default defineComponent({
 
     // 关闭icon
     const closeIconEl = () => {
-      const iconName = isDefaultTag() ? 'error-o' : 'close';
+      const iconName = isDefaultTag() ? 'error' : 'close';
 
       return deletable.value ? (
         <a class="remove-button" onClick={handleDelete}>

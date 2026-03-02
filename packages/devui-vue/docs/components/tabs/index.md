@@ -115,13 +115,31 @@ export default defineComponent({
 ```vue
 <template>
   <d-tabs type="wrapped" v-model="id">
-    <d-tab id="tab1" title="Tab1">
+    <d-tab id="tab1">
+      <template v-slot:title>
+        <div style="display:flex;align-items:center;">
+         <d-icon name="icon-directory-2" class="mr-xxs"></d-icon>
+         Tab1
+        </div>
+      </template>
       <p>Tab1 Content</p>
     </d-tab>
-    <d-tab id="tab2" title="Tab2">
+    <d-tab id="tab2">
+      <template v-slot:title>
+       <div style="display:flex;align-items:center;">
+        <d-icon name="icon-directory-2" class="mr-xxs"></d-icon>
+        Tab2
+       </div>
+      </template>
       <p>Tab2 Content</p>
     </d-tab>
-    <d-tab id="tab3" title="Tab3">
+    <d-tab id="tab3">
+     <template v-slot:title>
+      <div style="display:flex;align-items:center;">
+       <d-icon name="icon-directory-2" class="mr-xxs"></d-icon>
+       Tab3
+      </div>
+     </template>
       <p>Tab3 Content</p>
     </d-tab>
   </d-tabs>
@@ -142,20 +160,38 @@ export default defineComponent({
 
 :::
 
-### Slider 类型
+### Slider 类型 (图标+文字)
 
 :::demo
 
 ```vue
 <template>
   <d-tabs type="slider" v-model="id">
-    <d-tab id="tab1" title="Tab1">
+    <d-tab id="tab1">
+       <template v-slot:title>
+        <div style="display:flex;align-items:center;">
+         <d-icon name="icon-directory-2" class="mr-xxs"></d-icon>
+         Tab1
+        </div>
+      </template>
       <p>Tab1 Content</p>
     </d-tab>
-    <d-tab id="tab2" title="Tab2">
+    <d-tab id="tab2">
+       <template v-slot:title>
+        <div style="display:flex;align-items:center;">
+         <d-icon name="icon-directory-2" class="mr-xxs"></d-icon>
+         Tab2
+        </div>
+      </template>
       <p>Tab2 Content</p>
     </d-tab>
-    <d-tab id="tab3" title="Tab3">
+    <d-tab id="tab3">
+       <template v-slot:title>
+        <div style="display:flex;align-items:center;">
+         <d-icon name="icon-directory-2" class="mr-xxs"></d-icon>
+         Tab3
+        </div>
+      </template>
       <p>Tab3 Content</p>
     </d-tab>
   </d-tabs>
@@ -172,6 +208,60 @@ export default defineComponent({
   },
 });
 </script>
+```
+
+:::
+
+### Slider 类型 (纯图标)
+
+:::demo
+
+```vue
+<template>
+  <d-tabs type="slider" v-model="id" class="sliderOnlyIcon">
+    <d-tab id="tab1">
+       <template v-slot:title>
+        <div style="display:flex;align-items:center;width:16px;height:16px">
+         <d-icon name="icon-directory-2" class="mr-xxs"></d-icon>
+        </div>
+      </template>
+      <p>Tab1 Content</p>
+    </d-tab>
+    <d-tab id="tab2">
+       <template v-slot:title>
+        <div style="display:flex;align-items:center;width:16px;height:16px">
+         <d-icon name="setting" class="mr-xxs"></d-icon>
+        </div>
+      </template>
+      <p>Tab2 Content</p>
+    </d-tab>
+    <d-tab id="tab3">
+       <template v-slot:title>
+        <div style="display:flex;align-items:center;width:16px;height:16px">
+         <d-icon name="application" class="mr-xxs"></d-icon>
+        </div>
+      </template>
+      <p>Tab3 Content</p>
+    </d-tab>
+  </d-tabs>
+</template>
+<script>
+import { defineComponent, ref } from 'vue';
+
+export default defineComponent({
+  setup() {
+    const id = ref('tab1');
+    return {
+      id,
+    };
+  },
+});
+</script>
+<style>
+.sliderOnlyIcon .devui-tabs__nav--slider >li a{
+  padding:6px;
+}
+</style>
 ```
 
 :::
