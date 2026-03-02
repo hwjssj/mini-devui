@@ -117,7 +117,7 @@ export const devuiLightTheme: Theme = new Theme({
     'devui-font-size-icon': '16px',
     'devui-font-size-sm': '12px',
     'devui-font-size-md': '12px',
-    'devui-font-size-lg': '14px',
+    'devui-font-size-lg': '12px',
     'devui-font-title-weight': 'bold',
     'devui-font-content-weight': 'normal',
     'devui-line-height-base': '1.5',

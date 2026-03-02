@@ -3,6 +3,10 @@
 @mixin tag-item() {
   .#{$devui-prefix}-tag > .#{$devui-prefix}-tag__item {
     display: block !important;
+    background-color: #f1f4fc;
+    height: 20px;
+    line-height: 20px;
+    font-size: 12px;
 
     .dp-category-search-multi-tag > span,
     & > span {
