@@ -6,6 +6,98 @@
 
 基础卡片容器，其中可包含文字，列表，图片，段落，用于概览展示时。
 
+### 页面卡片还原
+
+:::demo
+
+```vue
+<template>
+  <d-card class="card-demo-basic">
+    <template #avatar>
+      <d-avatar name="组件头像" :width="48" :height="48"></d-avatar>
+    </template>
+    <template #title>
+      <span class="card_title">
+        <span>MO安全编程规范</span>
+        <div class="card_icon_list">
+          <d-icon name="star-o"></d-icon>
+          <span style="rotate: -90deg;margin-top: -30px;margin-left: 28px;"><d-icon name="more-operate"></d-icon></span>
+        </div>
+      </span>
+    </template>
+    <template #content>
+      <d-tag type="success" size="sm" style="margin-right: 8px;">项目</d-tag>
+      <d-tag size="sm">标签</d-tag>
+    </template>
+    <template #actions>
+      <span>创建者：abc_abcdefghijklmn</span><span>|</span><span>项目id：a2b...</span>
+    </template>
+  </d-card>
+</template>
+<style lang="scss">
+.devui-card__header {
+  height: 48px;
+  line-height: 48px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 32px;
+}
+.devui-card__subtitle {
+  display: none;
+}
+.devui-card__actions {
+  height: 32px;
+  margin-top: 10px;
+}
+.card_title {
+  width: 280px;
+  display: flex;
+  justify-content: space-between;
+  .card_icon_list {
+    width: 64px;
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
+.card-demo-basic {
+  cursor: pointer;
+  width: 380px;
+  height: 182px;
+
+  .card-demo-icon {
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+  .card-demo-icon + span {
+    vertical-align: middle;
+  }
+  .card-block {
+    margin-right: 16px;
+    i {
+      cursor: pointer;
+      font-size: 16px;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+    i + span {
+      vertical-align: middle;
+    }
+  }
+  .card-container {
+    width: 350px;
+  }
+  .action-text {
+    color: #8a8e99;
+  }
+}
+</style>
+```
+
+:::
+
+
 ### 基本用法
 
 :::demo
