@@ -46,12 +46,15 @@
   cursor: pointer;
 
   > svg g {
-    fill: $devui-dividing-line;
+    fill: none;
+    stroke-width: 1;
+    stroke: var(--devui-base-bg-dark,#252b3a);
+    transition: all 0.2s;
   }
 
   &:hover {
     > svg g {
-      fill: $devui-icon-fill-active-hover;
+      stroke: var(--devui-brand-hover,#7693f5);
     }
   }
 }
@@ -65,12 +68,15 @@
   visibility: visible !important;
 
   > svg g {
-    fill: $devui-icon-fill-active;
+    fill: var(--devui-primary,#5e7ce0);
+    stroke: none;
+    transition: all 0.2s;
   }
 
   &:hover {
     > svg g {
-      fill: $devui-icon-fill-active-hover;
+      fill: var(--devui-brand-hover,#7693f5);
+      stroke: none;
     }
   }
 }

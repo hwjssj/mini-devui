@@ -2,55 +2,95 @@
 
 .#{$devui-prefix}-table__sort-clickable {
   flex: 1;
-  height: 20px;
-  line-height: 20px;
+  height: 19px; 
+  line-height: 19px;
   margin-left: 8px;
   margin-right: 4px;
   vertical-align: -0.55em;
   cursor: pointer;
+
+
+  svg {
+    width: 18px !important; 
+    height: 18px !important;
+    display: inline-block;
+    transform: scale(1.05); 
+    transform-origin: center center; 
+  }
 }
 
 .#{$devui-prefix}-table__sort-default {
-  > svg g use {
-    fill: $devui-dividing-line;
-  }
-
   > svg g polygon {
-    fill: $devui-icon-bg;
+    fill: none;
+    stroke: var(--devui-base-bg-dark,#252b3a);
+    stroke-width: 0.7px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-miterlimit: 1;
+    transition: all 0.2s ease;
   }
 
   &:hover {
-    > svg g use {
-      fill: $devui-icon-fill-active-hover;
-    }
-  }
-}
-
-.#{$devui-prefix}-table__sort-asc,
-.#{$devui-prefix}-table__sort-desc {
-  > svg g use {
-    fill: $devui-icon-fill-active;
-  }
-
-  > svg g polygon {
-    fill: $devui-icon-bg;
-  }
-
-  &:hover {
-    > svg g use {
-      fill: $devui-icon-fill-active-hover;
+    > svg g polygon {
+      stroke: var(--devui-primary-hover,#7693f5);
     }
   }
 }
 
 .#{$devui-prefix}-table__sort-asc {
-  > svg g polygon:last-of-type {
-    opacity: 0.3;
+  > svg g {
+    polygon:first-of-type {
+      fill: var(--devui-primary-hover,#7693f5);
+      stroke: var(--devui-primary-hover,#7693f5);
+      stroke-width: 0.7px;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 1;
+      opacity: 1;
+    }
+    polygon:last-of-type {
+      fill: none;
+      stroke: var(--devui-primary-hover,#7693f5);
+      stroke-width: 0.7px;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 1;
+      opacity: 1;
+    }
+  }
+
+  &:hover {
+    > svg g polygon:first-of-type {
+      fill: var(--devui-primary,#5e7ce0);
+    }
   }
 }
 
 .#{$devui-prefix}-table__sort-desc {
-  > svg g polygon:first-of-type {
-    opacity: 0.3;
+  > svg g {
+    polygon:first-of-type {
+      fill: none;
+      stroke: var(--devui-primary-hover,#7693f5);
+      stroke-width: 0.7px;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 1;
+      opacity: 1;
+    }
+    polygon:last-of-type {
+      fill: var(--devui-primary-hover,#7693f5);
+      stroke: var(--devui-primary-hover,#7693f5);
+      stroke-width: 0.7px;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 1;
+      opacity: 1;
+    }
+  }
+
+  &:hover {
+    > svg g polygon:last-of-type {
+      fill: var(--devui-primary,#5e7ce0);
+    }
   }
 }

@@ -39,7 +39,7 @@ export default defineComponent({
                   in="shadowBlurOuter1"></feColorMatrix>
               </filter>
             </defs>
-            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="scale(1.5) tranaslate(-2.67,-2.67)">
               <use fill-rule="evenodd" {...XLINK_HREF}></use>
               <polygon points="8 4 11 7 5 7"></polygon>
               <polygon points="8 12 5 9 11 9"></polygon>

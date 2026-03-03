@@ -1252,13 +1252,59 @@ export default defineComponent({
 
 ```vue
 <template>
-  <d-table :indent="32" @check-change="treeCheckChange" :data="baseTreeTableData" row-key="firstName">
-    <d-column type="index">
+  <d-table
+    :indent="32"
+    :data="baseTreeTableData"
+    row-key="firstName"
+    ref="tableRef"
+    class="custom-tree-table"
+  >
+    <d-column type="index" width="60">
       <template #default="scope">
-        {{ `No.${scope.rowIndex + 1}` }}
+        No.{{ scope.rowIndex + 1 }}
       </template>
     </d-column>
-    <d-column field="firstName" header="First Name" show-overflow-tooltip></d-column>
+
+    <d-column field="firstName" header="First Name">
+      <template #header>
+        <div class="tree-header-cell">
+          <span 
+            class="devui-table__tree-operate custom-tree-icon"
+            @click.stop="handleAllExpand"
+            style="visibility: visible !important;
+             cursor: pointer;
+             margin-right:8px;
+             padding-top:3px;
+             "
+          >
+            <svg 
+              width="16" 
+              height="16" 
+              viewBox="0 0 16 16" 
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <rect 
+                  x="0.5" 
+                  y="0.5" 
+                  width="15" 
+                  height="15" 
+                  rx="2" 
+                  stroke="#9DA3B4"
+                  stroke-width="1"
+                ></rect>
+                <path 
+                  :d="isAllExpand ? 'M4,7.25 L12,7.25 L12,8.75 L4,8.75 L4,7.25 Z' : 'M8.75,4 L8.75,7.25 L12,7.25 L12,8.75 L8.749,8.75 L8.75,12 L7.25,12 L7.249,8.75 L4,8.75 L4,7.25 L7.25,7.25 L7.25,4 L8.75,4 Z'"
+                  fill="#9DA3B4"
+                ></path>
+              </g>
+            </svg>
+          </span>
+          First Name
+        </div>
+      </template>
+    </d-column>
+
     <d-column field="lastName" header="Last Name"></d-column>
     <d-column field="gender" header="Gender"></d-column>
     <d-column field="date" header="Date of birth"></d-column>
@@ -1266,10 +1312,13 @@ export default defineComponent({
 </template>
 
 <script>
-import { defineComponent, ref } from 'vue';
+import { defineComponent, ref, nextTick } from 'vue';
 
 export default defineComponent({
   setup() {
+    const tableRef = ref(null);
+    const isAllExpand = ref(false);
+
     const baseTreeTableData = ref([
       {
         firstName: 'Mark1',
@@ -1277,30 +1326,14 @@ export default defineComponent({
         date: '1990/01/11',
         gender: 'Male1',
         children: [
-          {
-            firstName: 'Mark2',
-            lastName: 'Otto',
-            date: '1990/01/11',
-            gender: 'Male',
-          },
+          { firstName: 'Mark2', lastName: 'Otto', date: '1990/01/11', gender: 'Male' },
           {
             firstName: 'Mark3',
             lastName: 'Otto',
             date: '1990/01/11',
             gender: 'Male',
             children: [
-              {
-                firstName: 'Mark31',
-                lastName: 'Otto',
-                date: '1990/01/11',
-                gender: 'Male',
-              },
-              {
-                firstName: 'Mark32',
-                lastName: 'Otto',
-                date: '1990/01/11',
-                gender: 'Male',
-              },
+              { firstName: 'Mark31', lastName: 'Otto', date: '1990/01/11', gender: 'Male' },
             ],
           },
         ],
@@ -1311,56 +1344,68 @@ export default defineComponent({
         gender: 'Female',
         date: '1990/01/12',
         children: [
-          {
-            firstName: 'Jacob2',
-            lastName: 'Otto',
-            date: '1990/01/11',
-            gender: 'Male',
-          },
-          {
-            firstName: 'Jacob3',
-            lastName: 'Otto',
-            date: '1990/01/11',
-            gender: 'Male',
-            children: [
-              {
-                firstName: 'Jacob31',
-                lastName: 'Otto',
-                date: '1990/01/11',
-                gender: 'Male',
-              },
-              {
-                firstName: 'Jacob32',
-                lastName: 'Otto',
-                date: '1990/01/11',
-                gender: 'Male',
-              },
-            ],
-          },
+          { firstName: 'Jacob2', lastName: 'Otto', date: '1990/01/11', gender: 'Male' },
         ],
       },
-      {
-        firstName: 'Danni',
-        lastName: 'Chen',
-        gender: 'Male',
-        date: '1990/01/13',
-      },
-      {
-        firstName: 'green',
-        lastName: 'gerong',
-        gender: 'Male',
-        date: '1990/01/14',
-      },
+      { firstName: 'Danni', lastName: 'Chen', gender: 'Male', date: '1990/01/13' },
     ]);
 
-    const treeCheckChange = (val, row, selection) => {
-      console.log('treeCheckChange', selection);
+    const handleAllExpand = async () => {
+      isAllExpand.value = !isAllExpand.value;
+      await nextTick();
+
+      const expandIcons = document.querySelectorAll(
+        '.custom-tree-table .devui-table__tree-operate:not(.tree-header-cell .devui-table__tree-operate)'
+      );
+
+      expandIcons.forEach(icon => {
+        if (window.getComputedStyle(icon).visibility !== 'hidden') {
+          const row = icon.closest('.devui-table__row');
+          const isRowExpanded = row.classList.contains('expanded');
+          
+          if ((isAllExpand.value && !isRowExpanded) || (!isAllExpand.value && isRowExpanded)) {
+            icon.click();
+          }
+        }
+      });
+
+      nextTick(() => {
+        const firstTreeRow = document.querySelector('.custom-tree-table .devui-table__row--level-0');
+        if (firstTreeRow) {
+          const actualExpanded = firstTreeRow.classList.contains('expanded');
+          isAllExpand.value = actualExpanded;
+        }
+      });
     };
 
-    return { baseTreeTableData, treeCheckChange };
+    return {
+      tableRef,
+      baseTreeTableData,
+      isAllExpand,
+      handleAllExpand,
+    };
   },
 });
 </script>
+
+<style scoped>
+.tree-header-cell {
+  display: flex;
+  align-items: center;
+}
+
+:deep(.custom-tree-table .devui-table__tree-operate) {
+  pointer-events: auto !important;
+  user-select: none !important;
+  margin-right: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+}
+
+</style>
 ```
 
 :::
