@@ -71,7 +71,7 @@ export default defineComponent({
     const renderContent = () => {
       return (
         <>
-          <div class={[ns.e('splitter'), deepValue === 0 && ns.e('parent-list')]} style={{ left: deepValue * 20 + 10 + 'px' }}></div>
+          {/* <div class={[ns.e('splitter'), deepValue === 0 && ns.e('parent-list')]} style={{ left: deepValue * 20 + 10 + 'px' }}></div> */}
           {(!rootSlots?.itemTemplate || itemTemplate.value === false) && <>{title.value}</>}
           {rootSlots?.itemTemplate &&
             itemTemplate.value !== false &&

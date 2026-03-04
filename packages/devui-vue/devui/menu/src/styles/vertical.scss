@@ -9,6 +9,7 @@
   transition: width $devui-animation-duration-slow $devui-animation-ease-in-smooth,
     padding $devui-animation-duration-slow $devui-animation-ease-in-smooth;
   border-right: $devui-line 1px solid;
+  padding-right: 4px;
 
   ::after {
     transition: all $devui-animation-duration-fast $devui-animation-ease-in-smooth;
@@ -48,6 +49,7 @@
   .#{$devui-prefix}-menu-item-vertical-wrapper {
     padding-left: 0 !important;
     margin: 4px 0 !important;
+    border-radius: 2px;
   }
 
   .#{$devui-prefix}-menu-item {
@@ -63,7 +65,7 @@
 
     &:hover {
       color: $devui-list-item-hover-text;
-      background-color: $devui-list-item-hover-bg;
+      background-color: $devui-primary-bg;
     }
 
     span:nth-child(2) {
@@ -116,7 +118,7 @@
 
       &:hover {
         color: $devui-list-item-hover-text;
-        background-color: $devui-list-item-hover-bg;
+        background-color: $devui-primary-bg;
       }
 
       &:nth-child(1) {
@@ -163,6 +165,7 @@
   .#{$devui-prefix}-menu-item-select {
     background: $devui-primary-bg !important;
     position: relative;
+    border-radius: 2px;
 
     span,
     a {
@@ -172,10 +175,10 @@
     &::after {
       display: block;
       position: absolute;
-      right: 0;
+      left: 0;
       top: 0;
       height: 100%;
-      width: 4px;
+      width: 2px;
       content: '';
       opacity: 1;
       background: var(--devui-brand, #5e7ce0);

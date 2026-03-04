@@ -79,7 +79,7 @@ d-accordion-item-routerlink,
 
     &.#{$devui-prefix}-accordion--router-active,
     &.#{$devui-prefix}-accordion--active:not(.#{$devui-prefix}-accordion--open) {
-      color: $devui-brand-active;
+      color: var(--devui-primary,#5e7ce0);
       font-weight: bold;
 
       & > a {
@@ -166,7 +166,7 @@ d-accordion-item-routerlink {
   padding-right: 30px;
 
   &.#{$devui-prefix}-accordion--active:not(.#{$devui-prefix}-accordion--open) {
-    color: $devui-brand-active;
+    color: var(--devui-primary,#5e7ce0);
     background: transparent;
   }
 }
