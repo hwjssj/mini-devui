@@ -1,0 +1,86 @@
+@import '@devui/theme/styles-var/devui-var.scss';
+
+.dp-filter {
+  display: inline-block;
+  position: relative;
+
+  .dp-filter-trigger-wrap {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 4px;
+
+    .dp-filter-arrow {
+      width: 1em;
+      height: 1em;
+      color: #000;
+      flex-shrink: 0;
+    }
+  }
+
+  .dp-filter-panel {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    min-width: fit-content;
+    max-width: 400px;
+    max-height: 360px;
+    background-color: $devui-base-bg;
+    border: 1px solid $devui-dividing-line;
+    border-radius: $devui-border-radius;
+    box-shadow: $devui-shadow;
+    padding: 12px;
+    z-index: 1000;
+    overflow: hidden;
+    box-sizing: border-box;
+
+    .dp-filter-search {
+      margin-bottom: 12px;
+      :deep(.devui-search) {
+        width: 100%;
+      }
+    }
+
+    .dp-filter-tabs {
+      .devui-tabs__nav--slider > li a {
+        min-width: 105px !important;
+        text-align: center !important;
+        font-size: 12px !important;
+      }
+      .devui-tab__content {
+        height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+    }
+
+    .dp-filter-options {
+      max-height: 240px;
+      overflow-y: auto;
+      margin-top: 4px !important;
+
+      .dp-filter-option {
+        padding: 8px 6px;
+        border-radius: $devui-border-radius;
+        font-size: 12px;
+        color: $devui-text;
+        cursor: pointer;
+        transition: background-color $devui-animation-duration-slow;
+
+        &:hover {
+          background-color: $devui-list-item-hover-bg;
+        }
+
+        &.selected {
+          background-color: rgba($devui-brand, 0.1);
+          color: $devui-brand;
+        }
+        
+        &.disabled {
+          color: $devui-disabled-text;
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
+}
