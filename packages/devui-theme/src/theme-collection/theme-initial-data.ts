@@ -248,7 +248,7 @@ export const devuiInitialThemeData = {
   'devui-border-radius-feedback': '4px',
   'devui-border-radius-card': '16px',
   'devui-border-radius-full': '100px',
-  'devui-font-size': '16px',
+  'devui-font-size': '14px',
   'devui-font-size-card-title': '16px',
   'devui-font-size-page-title': '16px',
   'devui-font-size-modal-title': '18px',
