@@ -20,7 +20,9 @@ d-accordion-item-routerlink,
 .#{$devui-prefix}-accordion__list {
   display: block;
 }
-
+.#{$devui-prefix}-accordion__list ul{
+  padding-left: 0;
+}
 /* 菜单底色 */
 .#{$devui-prefix}-accordion__menu {
   display: block;
