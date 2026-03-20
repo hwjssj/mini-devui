@@ -6,7 +6,6 @@ import './filter.scss';
 
 export default defineComponent({
   name: 'DFilter',
-  inheritAttrs: false,
   props: filterProps,
   emits: ['update:modelValue', 'change'],
   setup(props: FilterProps, ctx: SetupContext) {

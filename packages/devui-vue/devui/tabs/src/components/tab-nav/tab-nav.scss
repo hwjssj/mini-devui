@@ -15,7 +15,6 @@ $devui-tab-slider-bg: $devui-list-item-active-hover-bg;
 
   li {
     cursor: pointer;
-    border: 2px solid transparent;
 
     & a {
       cursor: pointer;
@@ -44,6 +43,7 @@ $devui-tab-slider-bg: $devui-list-item-active-hover-bg;
     &:hover:not(.disabled) {
       & a {
         color: $devui-text;
+        font-weight: 500;
       }
     }
   }
@@ -104,6 +104,7 @@ $devui-tab-slider-bg: $devui-list-item-active-hover-bg;
       & span > a {
         color: $devui-text;
         padding: 0 16px;
+        font-weight: 500;
       }
     }
 
@@ -143,12 +144,15 @@ $devui-tab-slider-bg: $devui-list-item-active-hover-bg;
   display: flex;
   align-items: center;
   position: relative;
+  font-weight: 500;
+  padding: 2px !important;
+  color: $devui-aide-text;
 
   > li {
     cursor: pointer;
-    margin: 2px;
     position: relative;
     z-index: 1;
+    margin-right: 4px;
 
     &:first-child {
       border-left-width: 1px;
@@ -157,6 +161,9 @@ $devui-tab-slider-bg: $devui-list-item-active-hover-bg;
 
     &:last-child {
       border-radius: 0 $devui-border-radius $devui-border-radius 0;
+    }
+     &:last-of-type {
+      margin-right: 0 !important;
     }
 
     & a {
@@ -186,6 +193,7 @@ $devui-tab-slider-bg: $devui-list-item-active-hover-bg;
     &:hover:not(.disabled) {
       & a {
         color: $devui-text;
+        font-weight: 500;
 
         &:hover {
           color: $devui-text;
@@ -255,6 +263,7 @@ $devui-tab-slider-bg: $devui-list-item-active-hover-bg;
 
       & a {
         color: $devui-text;
+        font-weight: 500;
       }
     }
 
@@ -270,8 +279,8 @@ $devui-tab-slider-bg: $devui-list-item-active-hover-bg;
   border-bottom: 1px $devui-line solid;
 
   li {
-    margin-left: 32px;
-    margin-bottom: -3px;
+    margin-left: 24px;
+    margin-bottom: -1px;
 
     &:first-child {
       margin-left: 0;
@@ -281,7 +290,7 @@ $devui-tab-slider-bg: $devui-list-item-active-hover-bg;
 
 .#{$devui-prefix}-tabs__nav--pills {
   > li {
-    margin-left: 32px;
+    margin-left: 24px;
 
     &:first-child {
       margin-left: 0;

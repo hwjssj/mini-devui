@@ -118,7 +118,7 @@ export default defineComponent({
     <d-tab id="tab1">
       <template v-slot:title>
         <div style="display:flex;align-items:center;">
-         <d-icon name="icon-directory-2" class="mr-xxs"></d-icon>
+         <d-icon name="icon-directory-2" class="mr-xs"></d-icon>
          Tab1
         </div>
       </template>
@@ -127,7 +127,7 @@ export default defineComponent({
     <d-tab id="tab2">
       <template v-slot:title>
        <div style="display:flex;align-items:center;">
-        <d-icon name="icon-directory-2" class="mr-xxs"></d-icon>
+        <d-icon name="icon-directory-2" class="mr-xs"></d-icon>
         Tab2
        </div>
       </template>
@@ -136,7 +136,7 @@ export default defineComponent({
     <d-tab id="tab3">
      <template v-slot:title>
       <div style="display:flex;align-items:center;">
-       <d-icon name="icon-directory-2" class="mr-xxs"></d-icon>
+       <d-icon name="icon-directory-2" class="mr-xs"></d-icon>
        Tab3
       </div>
      </template>
@@ -170,7 +170,7 @@ export default defineComponent({
     <d-tab id="tab1">
        <template v-slot:title>
         <div style="display:flex;align-items:center;">
-         <d-icon name="icon-directory-2" class="mr-xxs"></d-icon>
+         <d-icon name="icon-directory-2" class="mr-xs" size="16px"></d-icon>
          Tab1
         </div>
       </template>
@@ -179,7 +179,7 @@ export default defineComponent({
     <d-tab id="tab2">
        <template v-slot:title>
         <div style="display:flex;align-items:center;">
-         <d-icon name="icon-directory-2" class="mr-xxs"></d-icon>
+         <d-icon name="icon-directory-2" class="mr-xs" size="16px"></d-icon>
          Tab2
         </div>
       </template>
@@ -188,7 +188,7 @@ export default defineComponent({
     <d-tab id="tab3">
        <template v-slot:title>
         <div style="display:flex;align-items:center;">
-         <d-icon name="icon-directory-2" class="mr-xxs"></d-icon>
+         <d-icon name="icon-directory-2" class="mr-xs" size="16px"></d-icon>
          Tab3
         </div>
       </template>
@@ -208,6 +208,11 @@ export default defineComponent({
   },
 });
 </script>
+<style>
+.icon-directory-2{
+  margin-right:0;
+}
+</style>
 ```
 
 :::
@@ -222,7 +227,7 @@ export default defineComponent({
     <d-tab id="tab1">
        <template v-slot:title>
         <div style="display:flex;align-items:center;width:16px;height:16px">
-         <d-icon name="icon-directory-2" class="mr-xxs"></d-icon>
+         <d-icon name="icon-directory-2" class="mr-xs"></d-icon>
         </div>
       </template>
       <p>Tab1 Content</p>
@@ -230,7 +235,7 @@ export default defineComponent({
     <d-tab id="tab2">
        <template v-slot:title>
         <div style="display:flex;align-items:center;width:16px;height:16px">
-         <d-icon name="setting" class="mr-xxs"></d-icon>
+         <d-icon name="setting" class="mr-xs"></d-icon>
         </div>
       </template>
       <p>Tab2 Content</p>
@@ -238,7 +243,7 @@ export default defineComponent({
     <d-tab id="tab3">
        <template v-slot:title>
         <div style="display:flex;align-items:center;width:16px;height:16px">
-         <d-icon name="application" class="mr-xxs"></d-icon>
+         <d-icon name="application" class="mr-xs"></d-icon>
         </div>
       </template>
       <p>Tab3 Content</p>
@@ -470,15 +475,15 @@ export default defineComponent({
 <template>
   <d-tabs v-model="id">
     <d-tab id="tab1" title="Tab1">
-      <template v-slot:title><d-icon name="code" class="mr-xxs" />代码</template>
+      <template v-slot:title><d-icon name="code" class="mr-xs" />代码</template>
       <p>Tab1 Content</p>
     </d-tab>
     <d-tab id="tab2" title="Tab2">
-      <template v-slot:title><d-icon name="merge-request" class="mr-xxs" />合并请求</template>
+      <template v-slot:title><d-icon name="merge-request" class="mr-xs" />合并请求</template>
       <p>Tab2 Content</p>
     </d-tab>
     <d-tab id="tab3" title="Tab3">
-      <template v-slot:title><d-icon name="help" class="mr-xxs" />Issues</template>
+      <template v-slot:title><d-icon name="help" class="mr-xs" />Issues</template>
       <p>Tab3 Content</p>
     </d-tab>
   </d-tabs>

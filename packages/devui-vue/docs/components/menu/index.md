@@ -96,6 +96,32 @@ let width = ref(480);
     </d-sub-menu>
   </d-menu>
 </template>
+<style>
+
+.layer_1 .icon-system,.layer_1  .icon-setting, .layer_1 .icon-homepage{
+  font-size:24px;
+  vertical-align:-0.4rem
+}
+.layer_2 .icon-system,.layer_2  .icon-setting, .layer_2 .icon-homepage{
+  font-size:24px ;
+  vertical-align:-0.4rem;
+}
+.layer_3 .icon-system,.layer_3  .icon-setting, .layer_3 .icon-homepage{
+  font-size:16px ;
+  vertical-align:-0.2rem;
+}
+.layer_1 .devui-menu-icon + span,.layer_2 .devui-menu-icon + span{
+  margin-left:8px;
+}
+
+.layer_3 .devui-submenu-title-content{
+  margin-left:16px !important;
+  font-size:14px !important;
+}
+.devui-menu-item-select{
+  font-weight:700;
+}
+</style>
 ```
 
 :::

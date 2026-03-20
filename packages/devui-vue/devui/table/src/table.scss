@@ -64,7 +64,7 @@
 
   &--sm {
     tbody > tr > td {
-      font-size: $devui-font-size-sm;
+      font-size: 14px;
       padding: 7px 20px 8px;
 
       &.#{$devui-prefix}-table__checkable-cell {

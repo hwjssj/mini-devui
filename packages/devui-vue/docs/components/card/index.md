@@ -26,7 +26,7 @@
       </span>
     </template>
     <template #content>
-      <d-tag type="success" size="sm" style="margin-right: 8px;">项目</d-tag>
+      <d-tag type="success" size="sm" style="margin-right: 10px;">项目</d-tag>
       <d-tag size="sm">标签</d-tag>
     </template>
     <template #actions>

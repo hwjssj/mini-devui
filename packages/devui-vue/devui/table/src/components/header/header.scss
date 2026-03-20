@@ -54,7 +54,7 @@
       position: relative;
       display: flex;
       align-items: center;
-      padding-left: 20px;
+      padding-left: 16px;
       padding-right: 8px;
 
       .title {
@@ -63,7 +63,7 @@
         font-size: $devui-font-size;
         color: $devui-text;
         font-weight: 700;
-        line-height: 36px;
+        line-height: 40px;
         vertical-align: middle;
         white-space: nowrap;
         text-overflow: ellipsis;

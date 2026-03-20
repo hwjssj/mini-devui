@@ -14,13 +14,13 @@
 <template>
   <div>
     Small
-    <d-search class="mt-0 mb-2" size="sm" auto-focus style="width: 200px" @search="onSearch"></d-search>
+    <d-search class="mt-0 mb-2" size="sm" auto-focus style="width: 200px" @search="onSearch" placeholder=" 请输入关键字"></d-search>
     Middle
-    <d-search class="mt-0 mb-2" style="width: 200px" is-keyup-search :delay="1000" @search="onSearch"></d-search>
+    <d-search class="mt-0 mb-2" style="width: 200px" is-keyup-search :delay="1000" @search="onSearch" placeholder=" 请输入关键字"></d-search>
     Large
-    <d-search class="mt-0 mb-2" size="lg" style="width: 200px" @search="onSearch"></d-search>
+    <d-search class="mt-0 mb-2" size="lg" style="width: 200px" @search="onSearch" placeholder=" 请输入关键字"></d-search>
     Disabled
-    <d-search class="mt-0 mb-2" disabled style="width: 200px" @search="onSearch"></d-search>
+    <d-search class="mt-0 mb-2" disabled style="width: 200px" @search="onSearch" placeholder=" 请输入关键字"></d-search>
   </div>
 </template>
 <script>
@@ -47,7 +47,7 @@ export default defineComponent({
 ```vue
 <template>
   <div>
-    <d-search icon-position="left" style="width: 200px" placeholder="请输入"></d-search>
+    <d-search icon-position="left" style="width: 200px" placeholder=" 请输入"></d-search>
   </div>
 </template>
 ```
@@ -61,7 +61,7 @@ export default defineComponent({
 ```vue
 <template>
   <div>
-    <d-search icon-position="left" no-border style="width: 200px"></d-search>
+    <d-search icon-position="left" no-border style="width: 200px" placeholder=" 请输入关键字"></d-search>
   </div>
 </template>
 ```
@@ -74,7 +74,7 @@ export default defineComponent({
 
 ```vue
 <template>
-  <d-search css-class="ipt" v-model="searchText" :max-length="5" style="width: 200px"></d-search>
+  <d-search css-class="ipt" v-model="searchText" :max-length="5" style="width: 200px" placeholder=" 请输入关键字"></d-search>
 </template>
 
 <script>

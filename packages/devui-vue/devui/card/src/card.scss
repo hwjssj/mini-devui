@@ -3,14 +3,14 @@
 $card-ele-space: var(--card-ele-space, 8px);
 $card-block-space: var(--card-block-space, 16px);
 $card-border-radius: $devui-border-radius-card;
-$card-title-font-size: $devui-font-size-card-title;
+$card-title-font-size: $devui-font-size-modal-title;
 $card-subtitle-font-size: $devui-font-size;
 $card-content-font-size: $devui-font-size;
 
 .#{$devui-prefix}-card {
   position: relative;
   display: block;
-  padding: 16px 20px;
+  padding: 20px 20px;
   border-radius: $card-border-radius;
   box-shadow: $devui-shadow-length-base $devui-light-shadow;
   transition:

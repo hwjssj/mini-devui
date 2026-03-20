@@ -8,8 +8,8 @@
         <div class="left">
             <div v-for="(item, index) in leftCardData" :key="index" class="left-menu-item"
                 :class="{ 'active-card': activeIndex === index }" @click="activeIndex = index">
-                <d-icon :name="item.icon" style="margin-right:8px"></d-icon>
-                <div>{{ item.text }}</div>
+                <d-icon :name="item.icon"  size="16px"></d-icon>
+                <div style="margin-left:8px">{{ item.text }}</div>
             </div>
         </div>
         <div class="main">
@@ -88,7 +88,7 @@
 
                         <div class="right_bottom_icon-grid">
                             <div class="right_bottom_icon-item" v-for="item in iconList" :key="item.key">
-                                <d-icon :name="item.icon" size="18px" />
+                                <d-icon :name="item.icon" size="22px" />
                                 <span class="right_bottom_label">{{ item.label }}</span>
                             </div>
                         </div>
@@ -161,7 +161,7 @@ export default defineComponent({
 }
 
 .right {
-    min-width: 384px !important;
+    min-width: 406px !important;
 }
 
 .left-menu-item {
@@ -171,7 +171,7 @@ export default defineComponent({
     font-size: 12px;
     padding: 8px;
     margin-bottom: 4px;
-    border-radius: 4px;
+    border-radius: 8px;
     cursor: pointer;
     transition: all 0.2s ease;
 }
@@ -301,6 +301,10 @@ export default defineComponent({
     height: 261px;
 }
 
+.devui-carousel__item .devui-card__shadow--hover:hover{
+     overflow:visible !important;
+     box-shadow:none !important;
+}
 .right_card_content_title {
     font-size: 16px;
     font-weight: 700;
@@ -314,8 +318,9 @@ export default defineComponent({
 }
 
 .right_bottom {
-    width: 384px;
+    width: 406px;
     margin-bottom: 20px;
+    height:316px;
 }
 
 .right_bottom_top {
@@ -332,7 +337,7 @@ export default defineComponent({
 }
 
 .right_bottom_top_all-docs {
-    font-size: 14px;
+    font-size: 12px;
     color: #86909c;
     cursor: pointer;
 }
@@ -340,19 +345,25 @@ export default defineComponent({
 .right_bottom_icon-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 24px 16px;
+    gap: 0px 4.67px;
 }
 
 .right_bottom_icon-item {
     display: flex;
     flex-direction: column;
+    justify-content:center;
     align-items: center;
     gap: 8px;
     cursor: pointer;
+    width:88px;
+    height:80px
 }
-
+.right_bottom_icon-item:hover{
+    background:#f5f5f5;
+    border-radius:8px;
+}
 .right_bottom_icon-item .right_bottom_label {
-    font-size: 12px;
+    font-size: 14px;
     color: #4e5969;
     text-align: center;
 }
@@ -369,7 +380,7 @@ export default defineComponent({
 ```vue
 <template>
     <div class="breadcrumb-wrapper">
-        <d-icon name="back" class="back-icon" @click="handleBack" size="16px"></d-icon>
+        <d-icon name="back" class="back-icon" @click="handleBack" size="16px" color="#191919"></d-icon>
         <div class="breadcrumb-icon"></div>
         <div class="breadcrumb-core-container">
             <div class="breadcrumb-content">
@@ -522,7 +533,7 @@ export default defineComponent({
 
 .back-icon {
     cursor: pointer;
-    margin-right: 8px;
+    margin-right: 4px;
     align-self: center;
 }
 
@@ -630,8 +641,8 @@ export default defineComponent({
 }
 
 .item-icon {
-    width: 20px;
-    height: 20px;
+    width: 32px;
+    height: 32px;
     background-size: contain;
 }
 
@@ -652,10 +663,10 @@ export default defineComponent({
 }
 
 .dropdown-footer {
-    margin-top: 12px;
+    margin-top: 4px;
     text-align: right;
     font-size: 12px;
-    color: #999;
+    color: #575d6c;
 }
 
 .breadcrumb-id-section {
@@ -689,6 +700,11 @@ export default defineComponent({
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
     border-left: none;
+}
+.breadcrumb-tags  .devui-tag__item{
+    font-size:11px !important;
+    padding-left:5px;
+    padding-right:5px;
 }
 </style>
 ```

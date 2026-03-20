@@ -60,10 +60,10 @@ export default defineComponent({
 
 ```vue
 <template>
-  <div class="tag-demo-wrapper">
-    <d-tag><d-icon name="bug" size="12px" /> bug </d-tag>
-    <d-tag type="primary"><d-icon name="bug" size="12px" /> bug </d-tag>
-    <d-tag color="#b05bc1"><d-icon name="bug" size="12px" /> bug </d-tag>
+  <div class="tag-demo-wrapper tag-demo-wrapper__self">
+    <d-tag><d-icon name="setting" size="16px" /> bug </d-tag>
+    <d-tag type="primary"><d-icon name="setting" size="16px" /> bug </d-tag>
+    <d-tag color="#b05bc1"><d-icon name="setting" size="16px" /> bug </d-tag>
   </div>
 </template>
 <script>
@@ -79,6 +79,13 @@ export default defineComponent({
   },
 });
 </script>
+<style>
+.tag-demo-wrapper__self .devui-tag__item{
+  display:flex !important;
+  gap:4px;
+  align-items:center
+}
+</style>
 ```
 
 :::
@@ -89,7 +96,7 @@ export default defineComponent({
 
 ```vue
 <template>
-  <div class="tag-demo-wrapper">
+  <div class="tag-demo-wrapper tag-demo-wrapper_checkable">
     <d-tag color="#50D4AB" :checked="isChecked" @click="tagClick">标签</d-tag>
     <d-tag color="#50D4AB" size='sm' :checked="isChecked" @click="tagClick">标签</d-tag>
     <d-tag color="#FA9841" :checked="isChecked" @click="tagClick">标签</d-tag>
@@ -109,6 +116,17 @@ export default defineComponent({
   },
 });
 </script>
+<style scoped> 
+.tag-demo-wrapper_checkable .devui-tag .devui-tag__item{
+  border:0px !important
+}
+.tag-demo-wrapper_checkable .devui-tag--md{
+  line-height:24px !important
+}
+.tag-demo-wrapper_checkable .devui-tag--sm{
+  line-height:20px !important
+}
+</style>
 ```
 
 :::
@@ -119,8 +137,8 @@ export default defineComponent({
 
 ```vue
 <template>
-  <div class="tag-demo-wrapper">
-    <d-tag v-for="item in tagList" deletable :key="item" @tag-delete="() => handleClose(item)">{{ item }}</d-tag>
+  <div class="tag-demo-wrapper tag-demo-wrapper__deleteable">
+    <d-tag  v-for="item in tagList" deletable :key="item" @tag-delete="() => handleClose(item)">{{ item }}</d-tag>
   </div>
 </template>
 <script>
@@ -139,6 +157,17 @@ export default defineComponent({
   },
 });
 </script>
+<style>
+.tag-demo-wrapper__deleteable .remove-button{
+  width:16px;
+  height:16px;
+  line-height:16px;
+  margin-left:4px
+}
+.tag-demo-wrapper__deleteable .remove-button .icon-error{
+  font-size:16px !important
+}
+</style>
 ```
 
 :::

@@ -41,6 +41,11 @@ export default defineComponent({
   },
 });
 </script>
+<style>
+.dp-filter-option{
+  min-width:75px
+}
+</style>
 ```
 :::
 
@@ -55,6 +60,7 @@ export default defineComponent({
   <d-filter
     v-model="selectedValues"
     :data="categoryFilterData"
+    class="layerFilter"
   >
      <div> 分类筛选 </div>
   </d-filter>
@@ -96,6 +102,11 @@ export default defineComponent({
   },
 });
 </script>
+<style>
+.layerFilter .dp-filter-trigger-wrap{
+  gap:0 !important
+}
+</style>
 ```
 
 :::
@@ -113,6 +124,7 @@ export default defineComponent({
     :data="searchFilterData"
     show-search
     search-placeholder="请输入选项名称搜索"
+    class="searchFilter"
   >
       <div>带搜索筛选</div>
   </d-filter>
@@ -163,6 +175,11 @@ export default defineComponent({
   },
 });
 </script>
+<style> 
+.searchFilter .dp-filter-trigger-wrap{
+  gap:0 !important
+}
+</style>
 ```                             
 
 :::

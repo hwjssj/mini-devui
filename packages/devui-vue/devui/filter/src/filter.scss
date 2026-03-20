@@ -8,7 +8,7 @@
     display: inline-flex;
     align-items: center;
     cursor: pointer;
-    gap: 4px;
+    gap: 8px;
 
     .dp-filter-arrow {
       width: 1em;
@@ -20,7 +20,7 @@
 
   .dp-filter-panel {
     position: absolute;
-    top: calc(100% + 4px);
+    top: calc(100% + 8px);
     left: 0;
     min-width: fit-content;
     max-width: 400px;
@@ -33,6 +33,7 @@
     z-index: 1000;
     overflow: hidden;
     box-sizing: border-box;
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.16);
 
     .dp-filter-search {
       margin-bottom: 12px;
@@ -60,20 +61,20 @@
       margin-top: 4px !important;
 
       .dp-filter-option {
-        padding: 8px 6px;
+        padding: 8px 12px;
         border-radius: $devui-border-radius;
-        font-size: 12px;
+        font-size: 14px;
         color: $devui-text;
         cursor: pointer;
         transition: background-color $devui-animation-duration-slow;
+        margin: 5px 0;
 
         &:hover {
           background-color: $devui-list-item-hover-bg;
         }
 
         &.selected {
-          background-color: rgba($devui-brand, 0.1);
-          color: $devui-brand;
+          background-color: $devui-list-item-hover-bg;
         }
         
         &.disabled {
