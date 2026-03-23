@@ -10,6 +10,12 @@ const config = defineConfig({
   description: 'Vue DevUI 组件库',
   head,
   markdown,
+  // VitePress 开发服务器：允许通过本机 IP 访问
+  vite: {
+    server: {
+      host: true,
+    },
+  },
   locales: {
     '/': {
       lang: 'zh-CN',

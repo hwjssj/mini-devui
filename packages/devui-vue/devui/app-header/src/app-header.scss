@@ -5,7 +5,7 @@
  * - 栏高 40；左右内边距 8
  * - 图标与相邻文案：4
  * - 文案与下拉箭头：4（箭头占位 16×16）
- * - 品牌区 __brand：左右外边距 8；左侧竖分割线：宽 1、高 16、色 #DFE1E6、水平外边距 8
+ * - 品牌区 __brand：左外边距 0、右外边距 8；左侧竖分割线：宽 1、高 16、色 #DFE1E6、水平外边距 8
  * - 右侧操作区与头像：无竖线，用 gap；图标 16×16，按钮 32×32，按钮间距 4
  * - 中间区 __center：相对左侧区块 margin-left 7（稿面与竖线后首屏导航间距）
  * - 阴影：0 1 6 rgba(0,0,0,.08)
@@ -22,7 +22,8 @@
   --ah-line: 18px;
   --ah-divider-w: 1px;
   --ah-divider-h: 16px;
-  --ah-brand-mx: 8px;
+  --ah-brand-ml: 0;
+  --ah-brand-mr: 8px;
   --ah-divider-mx: 8px;
   --ah-console-mr: 16px;
   --ah-center-ml: 7px;
@@ -220,7 +221,7 @@
     display: inline-flex;
     align-items: center;
     gap: var(--ah-icon-text);
-    margin: 0 var(--ah-brand-mx);
+    margin: 0 var(--ah-brand-mr) 0 var(--ah-brand-ml);
     white-space: nowrap;
   }
 
