@@ -109,6 +109,8 @@ export const devuiLightTheme: Theme = new Theme({
     'devui-default-bg': '#f3f6f8',
     // 字体设置相关
     'devui-font-size': '12px',
+    'devui-font-size-aide': '12px',
+    'devui-form-control-extra-color': '#71757f',
     'devui-font-size-card-title': '14px',
     'devui-font-size-page-title': '16px',
     'devui-font-size-modal-title': '18px',
@@ -235,6 +237,7 @@ export const devuiDarkTheme: Theme = new Theme({
     'devui-aide-text': '#909090',
     'devui-aide-text-hover': '#73788a',
     'devui-aide-text-stress': '#A0A0A0',
+    'devui-form-control-extra-color': '#909090',
     'devui-placeholder': '#8A8A8A',
     'devui-light-text': '#ffffff',
     'devui-dark-text': '#252b3a',

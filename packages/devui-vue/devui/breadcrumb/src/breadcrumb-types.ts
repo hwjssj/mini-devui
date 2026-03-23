@@ -15,6 +15,7 @@ export interface SourceConfig {
   replace: boolean; // 在使用 to 进行路由跳转时，启用 replace 将不会向 history 添加新记录
   children?: breadcrumbChildren[]; // 下拉框内的内容
   showMenu?: boolean; // 可选，是否需要显示下拉箭头及下拉列表内容
+  active?: boolean; // 可选，当前页高亮，同 BreadcrumbItem 的 active
 }
 
 export const breadcrumbProps = {

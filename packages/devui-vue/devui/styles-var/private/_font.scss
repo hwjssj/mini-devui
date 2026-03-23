@@ -1,6 +1,7 @@
 // 字号大小变量
 
 $devui-font-size: var(--devui-font-size, 12px); //正文、卡片副标题
+$devui-font-size-aide: var(--devui-font-size-aide, 12px); //辅助说明、表单项额外提示等（与正文字号解耦）
 $devui-font-size-card-title: var(--devui-font-size-card-title, 14px); //卡片标题
 $devui-font-size-page-title: var(--devui-font-size-page-title, 16px); //页面标题
 $devui-font-size-message: var(--devui-font-size-page-title, 16px); //页面标题

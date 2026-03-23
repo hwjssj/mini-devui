@@ -1,9 +1,10 @@
 @import '@devui/theme/styles-var/devui-var.scss';
 
 .#{$devui-prefix}-form__label {
-  align-self: flex-start;
+  align-self: center;
 
   &--vertical {
+    align-self: flex-start;
     padding-bottom: 8px;
   }
 
@@ -36,7 +37,7 @@
   display: inline-block;
   vertical-align: middle;
   font-size: $devui-font-size;
-  color: $devui-aide-text;
+  color: $devui-text;
 }
 
 .#{$devui-prefix}-form__label--required {
@@ -44,6 +45,8 @@
     content: '*';
     color: red;
     display: inline-block;
+    vertical-align: middle;
+    line-height: 1;
     margin-right: 8px;
     margin-left: -12px;
   }
@@ -54,6 +57,8 @@
     content: '*';
     color: red;
     display: inline-block;
+    vertical-align: middle;
+    line-height: 1;
     margin-left: 8px;
   }
 }

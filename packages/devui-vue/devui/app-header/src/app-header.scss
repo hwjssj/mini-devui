@@ -1,0 +1,415 @@
+@import '@devui/theme/styles-var/devui-var.scss';
+
+/**
+ * 华为云控制台顶栏 — 间距与稿面对齐（单位 px）
+ * - 栏高 40；左右内边距 8
+ * - 图标与相邻文案：4
+ * - 文案与下拉箭头：4（箭头占位 16×16）
+ * - 品牌区 __brand：左右外边距 8；左侧竖分割线：宽 1、高 16、色 #DFE1E6、水平外边距 8
+ * - 右侧操作区与头像：无竖线，用 gap；图标 16×16，按钮 32×32，按钮间距 4
+ * - 中间区 __center：相对左侧区块 margin-left 7（稿面与竖线后首屏导航间距）
+ * - 阴影：0 1 6 rgba(0,0,0,.08)
+ */
+.#{$devui-prefix}-app-header {
+  --ah-h: 40px;
+  --ah-pad-x: 8px;
+  --ah-icon-text: 4px;
+  --ah-icon-nav: 16px;
+  --ah-icon-chevron: 16px;
+  --ah-icon-pin: 16px;
+  --ah-logo: 20px;
+  --ah-font: 12px;
+  --ah-line: 18px;
+  --ah-divider-w: 1px;
+  --ah-divider-h: 16px;
+  --ah-brand-mx: 8px;
+  --ah-divider-mx: 8px;
+  --ah-console-mr: 16px;
+  --ah-center-ml: 7px;
+  --ah-nav-item-px: 8px;
+  --ah-action-gap: 4px;
+  --ah-action-btn-size: 32px;
+  --ah-action-icon: 16px;
+  --ah-right-gap: 12px;
+  --ah-avatar-ml: 0;
+  --ah-meta-gap: 8px;
+
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  width: 100%;
+  min-height: var(--ah-h);
+  height: var(--ah-h);
+  box-sizing: border-box;
+  padding: 0 var(--ah-pad-x);
+  background: #ffffff;
+  color: #252b3a;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+  font-size: var(--ah-font);
+  line-height: var(--ah-line);
+
+  &__left,
+  &__right {
+    display: inline-flex;
+    align-items: center;
+    min-width: 0;
+  }
+
+  &__left {
+    flex: 0 1 auto;
+  }
+
+  &__center {
+    flex: 1 1 auto;
+    min-width: 0;
+    margin-left: var(--ah-center-ml);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  &__right {
+    flex: 0 0 auto;
+    align-items: center;
+    gap: var(--ah-right-gap);
+  }
+
+  /**
+   * Button 实际类名为 devui-button（非 devui-btn），且 --sm 默认 height:28px，必须在此覆盖为栏高 40px。
+   */
+  .#{$devui-prefix}-button.#{$devui-prefix}-button--sm {
+    &.#{$devui-prefix}-app-header__menu-trigger {
+      box-sizing: border-box;
+      min-width: 32px;
+      width: 32px;
+      min-height: var(--ah-h);
+      height: var(--ah-h);
+      padding: 0;
+      margin: 0 8px 0 0;
+      color: #252b3a;
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &.#{$devui-prefix}-app-header__console {
+      box-sizing: border-box;
+      min-height: var(--ah-h);
+      height: var(--ah-h);
+      min-width: 0;
+      padding: 0 4px;
+      margin: 0 var(--ah-console-mr) 0 0;
+      color: #252b3a;
+      font-size: var(--ah-font);
+      line-height: var(--ah-line);
+      font-weight: 400;
+      border: none;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    &.#{$devui-prefix}-app-header__meta-trigger {
+      box-sizing: border-box;
+      min-height: var(--ah-h);
+      height: var(--ah-h);
+      padding: 0 4px;
+      margin: 0;
+      color: #252b3a;
+      border: none;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    &.#{$devui-prefix}-app-header__nav-trigger {
+      box-sizing: border-box;
+      min-height: var(--ah-h);
+      height: var(--ah-h);
+      padding: 0 var(--ah-nav-item-px);
+      margin: 0;
+      color: #252b3a;
+      border: none;
+      border-radius: 0;
+      display: inline-flex;
+      align-items: center;
+      white-space: nowrap;
+      font-size: var(--ah-font);
+      line-height: var(--ah-line);
+      font-weight: 400;
+    }
+
+    &.#{$devui-prefix}-app-header__nav-trigger.#{$devui-prefix}-app-header__nav-trigger--active {
+      color: #252b3a;
+      background: transparent;
+    }
+
+    &.#{$devui-prefix}-app-header__action-btn {
+      box-sizing: border-box;
+      width: var(--ah-action-btn-size);
+      min-width: var(--ah-action-btn-size);
+      max-width: var(--ah-action-btn-size);
+      min-height: var(--ah-action-btn-size);
+      height: var(--ah-action-btn-size);
+      padding: 0;
+      margin: 0;
+      color: #babbc0;
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &.#{$devui-prefix}-app-header__lang-btn {
+      box-sizing: border-box;
+      min-width: 28px;
+      min-height: var(--ah-h);
+      height: var(--ah-h);
+      padding: 0 4px;
+      margin: 0;
+      color: #babbc0;
+      font-size: var(--ah-font);
+      line-height: var(--ah-line);
+      letter-spacing: 0.4px;
+      border: none;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    &.#{$devui-prefix}-app-header__avatar-trigger {
+      box-sizing: border-box;
+      width: 32px;
+      min-width: 32px;
+      max-width: 32px;
+      min-height: var(--ah-h);
+      height: var(--ah-h);
+      padding: 0;
+      margin: 0 0 0 var(--ah-avatar-ml);
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  /**
+   * Button 将插槽包在 .button-content 内，顶栏 flex gap 需写在内层才能作用到「图标 / 文案 / 箭头」之间。
+   */
+
+  &__meta-trigger .button-content,
+  &__nav-trigger .button-content {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--ah-icon-text);
+  }
+
+  &__menu-lines {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3px;
+
+    i {
+      display: block;
+      width: 14px;
+      height: 1px;
+      background: currentColor;
+    }
+  }
+
+  &__brand {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--ah-icon-text);
+    margin: 0 var(--ah-brand-mx);
+    white-space: nowrap;
+  }
+
+  &__brand-logo {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: var(--ah-logo);
+    height: var(--ah-logo);
+
+    svg {
+      display: block;
+    }
+  }
+
+  &__brand-text {
+    color: #252b3a;
+    font-size: var(--ah-font);
+    line-height: var(--ah-line);
+    font-weight: 600;
+  }
+
+  &__meta {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--ah-meta-gap);
+    min-width: 0;
+  }
+
+  &__meta-item {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  &__meta-label {
+    max-width: 220px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: var(--ah-font);
+    line-height: var(--ah-line);
+  }
+
+  &__meta-chevron {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: var(--ah-icon-chevron);
+    height: var(--ah-icon-chevron);
+  }
+
+  &__nav-list {
+    display: inline-flex;
+    align-items: stretch;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    gap: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    scrollbar-width: thin;
+  }
+
+  &__nav-item {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: stretch;
+  }
+
+  &__nav-icon {
+    flex-shrink: 0;
+    width: var(--ah-icon-nav);
+    height: var(--ah-icon-nav);
+    color: #5e7ce0;
+  }
+
+  &__nav-icon-svg {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: var(--ah-icon-nav);
+    height: var(--ah-icon-nav);
+
+    svg {
+      display: block;
+    }
+  }
+
+  &__nav-label {
+    color: #252b3a;
+  }
+
+  &__nav-chevron {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: var(--ah-icon-chevron);
+    height: var(--ah-icon-chevron);
+  }
+
+  &__actions {
+    display: inline-flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: var(--ah-action-gap);
+  }
+
+  &__action-item {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  &__action-icon {
+    width: var(--ah-action-icon);
+    height: var(--ah-action-icon);
+    flex-shrink: 0;
+  }
+
+  &__action-btn svg {
+    display: block;
+    width: var(--ah-action-icon);
+    height: var(--ah-action-icon);
+    flex-shrink: 0;
+  }
+
+  &__avatar-trigger {
+    .#{$devui-prefix}-avatar--style {
+      background-color: #5e7ce0 !important;
+      color: #ffffff !important;
+    }
+
+    .#{$devui-prefix}-avatar--background-0,
+    .#{$devui-prefix}-avatar--background-1 {
+      background-color: #5e7ce0 !important;
+    }
+  }
+
+  &__divider {
+    display: block;
+    box-sizing: content-box;
+    width: var(--ah-divider-w);
+    min-width: var(--ah-divider-w);
+    height: var(--ah-divider-h);
+    align-self: center;
+    background: #dfe1e6;
+    margin: 0 var(--ah-divider-mx);
+    flex-shrink: 0;
+  }
+
+  &__dropdown-menu {
+    min-width: 160px;
+    margin: 0;
+    padding: 8px 0;
+    list-style: none;
+  }
+
+  &__dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 32px;
+    padding: 0 12px;
+    cursor: pointer;
+    color: #252b3a;
+    white-space: nowrap;
+    font-size: var(--ah-font);
+    line-height: var(--ah-line);
+
+    &:hover {
+      background: $devui-list-item-hover-bg;
+      color: $devui-list-item-hover-text;
+    }
+
+    &.is-disabled {
+      color: $devui-disabled-text;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+  }
+
+  &__dropdown-item-icon {
+    color: inherit;
+  }
+}

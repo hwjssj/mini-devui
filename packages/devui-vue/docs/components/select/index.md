@@ -50,6 +50,50 @@ export default defineComponent({
 
 :::
 
+### 带辅助文本
+
+与表单组合时，可使用 **`layout="vertical"`** 的 `d-form` 与 **`d-form-item`** 的 **`extra-info`**，在标题与下拉框下方展示说明文案。辅助文本与控件间距、字号与颜色遵循设计稿：**12px / 行高 18px**、**#71757f**，与选择框上沿 **8px** 间距，组件内边距 **8px 16px 16px**（上/左右/下）。
+
+:::demo
+
+```vue
+<template>
+  <d-form layout="vertical" :data="formModel" class="select-demo-with-extra">
+    <d-form-item field="choice" label="标题" extra-info="辅助文本">
+      <d-select v-model="formModel.choice" :options="options" placeholder="请选择" />
+    </d-form-item>
+  </d-form>
+</template>
+
+<script>
+import { defineComponent, reactive } from 'vue';
+
+export default defineComponent({
+  name: 'DSelectDemoWithExtra',
+  setup() {
+    const formModel = reactive({
+      choice: '',
+    });
+    const options = ['选项一', '选项二', '选项三'];
+    return {
+      formModel,
+      options,
+    };
+  },
+});
+</script>
+
+<style scoped>
+.select-demo-with-extra {
+  box-sizing: border-box;
+  max-width: 360px;
+  padding: 8px 16px 16px;
+}
+</style>
+```
+
+:::
+
 ### 多选
 
 通过`multiple`：`true`来开启多选，通过设置`multiple-limit`来限制可以选择的数量

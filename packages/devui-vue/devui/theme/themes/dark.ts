@@ -45,6 +45,7 @@ export default {
   'devui-form-control-line-hover': '#909090',
   'devui-form-control-line-active': '#5e7ce0',
   'devui-form-control-line-active-hover': '#344899',
+  'devui-form-control-extra-color': '#909090',
   'devui-list-item-active-bg': '#5e7ce0',
   'devui-list-item-active-text': '#ffffff',
   'devui-list-item-active-hover-bg': '#526ecc',

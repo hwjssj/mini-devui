@@ -8,6 +8,7 @@ const ns = useNamespace('breadcrumb', true);
 const getEl = (selector: string) => document.body.querySelector(selector);
 
 const itemClass = ns.e('item');
+const itemActiveClass = ns.em('item', 'active');
 const separatorClass = ns.e('separator');
 const isLinkClass = '.is-link';
 const getDropdownTitle = () => getEl(ns.e('dropdown-title'));
@@ -62,6 +63,22 @@ describe('breadcrumb', () => {
     `
     });
     expect(wrapper.find(isLinkClass)).toBeTruthy();
+  });
+
+  it('should `active` apply highlight class on item', () => {
+    const wrapper = mount({
+      components: {
+        DBreadcrumb,
+        DBreadcrumbItem
+      },
+      template: `<d-breadcrumb>
+        <d-breadcrumb-item to="/a">A</d-breadcrumb-item>
+        <d-breadcrumb-item active><span>Current</span></d-breadcrumb-item>
+      </d-breadcrumb>`
+    });
+    const activeItem = wrapper.find(itemActiveClass);
+    expect(activeItem.exists()).toBe(true);
+    expect(activeItem.text()).toContain('Current');
   });
 
   it('should `source` work correct', async() => {

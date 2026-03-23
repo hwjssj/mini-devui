@@ -28,6 +28,26 @@
 
 :::
 
+### 当前页高亮（active）
+
+最后一级或当前路由所在项可设置 `active`，使用正文色与标题字重与可点击项区分。
+
+:::demo
+
+```vue
+<template>
+  <d-breadcrumb>
+    <d-breadcrumb-item to="{ path: '/' }">首页</d-breadcrumb-item>
+    <d-breadcrumb-item to="{ path: '/components' }">组件</d-breadcrumb-item>
+    <d-breadcrumb-item active>
+      <span>面包屑</span>
+    </d-breadcrumb-item>
+  </d-breadcrumb>
+</template>
+```
+
+:::
+
 ### 传入 source
 
 :::demo
@@ -44,7 +64,7 @@ export default defineComponent({
   setup() {
     const source = reactive([
       { title: 'DevUI', link: '/', linkType: 'routerLink', replace: true },
-      { title: 'Breadcrumb', link: 'components/breadcrumb/', noNavigation: true },
+      { title: 'Breadcrumb', link: 'components/breadcrumb/', noNavigation: true, active: true },
     ]);
     return {
       source,
@@ -138,10 +158,11 @@ export default defineComponent({
 
 ### BreadcrumbItem 参数
 
-| 参数    | 类型            | 默认  | 说明                                                               | 跳转 Demo                 |
-| :------ | :-------------- | :---- | :----------------------------------------------------------------- | :------------------------ |
-| to      | `string/object` | —     | 路由跳转对象，同 vue-router 的 to                                  | [基础面包屑](#基础面包屑) |
-| replace | `boolean`       | false | 在使用 to 进行路由跳转时，启用 replace 将不会向 history 添加新记录 | [基础面包屑](#基础面包屑) |
+| 参数    | 类型            | 默认  | 说明                                                               | 跳转 Demo                           |
+| :------ | :-------------- | :---- | :----------------------------------------------------------------- | :---------------------------------- |
+| to      | `string/object` | —     | 路由跳转对象，同 vue-router 的 to                                  | [基础面包屑](#基础面包屑)           |
+| replace | `boolean`       | false | 在使用 to 进行路由跳转时，启用 replace 将不会向 history 添加新记录 | [基础面包屑](#基础面包屑)           |
+| active  | `boolean`       | false | 是否为当前页，为 true 时以主文字色与加粗高亮                       | [当前页高亮（active）](#当前页高亮active) |
 
 ### 类型定义
 
@@ -166,5 +187,6 @@ export interface SourceConfig {
   replace: Boolean; // 在使用 to 进行路由跳转时，启用 replace 将不会向 history 添加新记录
   children?: breadcrumbChildren[]; // 下拉框内的内容
   showMenu?: boolean; // 可选，是否需要显示下拉箭头及下拉列表内容
+  active?: boolean; // 可选，当前页高亮，同 BreadcrumbItem 的 active
 }
 ```

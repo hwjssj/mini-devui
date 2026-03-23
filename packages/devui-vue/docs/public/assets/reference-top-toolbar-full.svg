@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1932" height="52" viewBox="0 0 1932 52" fill="none">
+  <defs>
+    <filter id="toolbarShadowFull" x="0" y="0" width="1932" height="52" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dy="1"/>
+      <feGaussianBlur stdDeviation="3"/>
+      <feComposite in2="hardAlpha" operator="out"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.08 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+    </filter>
+  </defs>
+  <g filter="url(#toolbarShadowFull)">
+    <rect width="1920" height="40" transform="translate(6 5)" fill="#FFFFFF" stroke="#E9EBEF"/>
+  </g>
+  <text x="966" y="30" text-anchor="middle" fill="#71757F" font-size="12" font-family="system-ui, -apple-system, sans-serif">
+    Full toolbar - design reference (replace with Figma / PNG)
+  </text>
+</svg>

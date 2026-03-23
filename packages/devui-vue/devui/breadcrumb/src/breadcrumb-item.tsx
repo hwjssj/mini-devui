@@ -41,11 +41,13 @@ export default defineComponent({
     /**
      * 需要DropDown下拉菜单
      */
+    const itemClass = () => [ns.e('item'), props.active && ns.em('item', 'active')];
+
     const renderBreadcrumbNode = () => {
       // 显示下拉框
       if (showMenu.value) {
         return (
-          <div class={ns.e('item')}>
+          <div class={itemClass()}>
             <d-dropdown trigger="hover" close-scope="blank"
               v-slots={{
                 menu: () => (
@@ -71,7 +73,7 @@ export default defineComponent({
       }
       // normal
       return (
-        <div class={ns.e('item')}>
+        <div class={itemClass()}>
           <span ref={link} class={linkClass}>
             {slots?.default?.()}
           </span>

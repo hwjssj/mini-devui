@@ -40,6 +40,13 @@ export const breadcrumbItemProps = {
   replace: {
     type: Boolean,
     default: false
+  },
+  /**
+   * 是否为当前页（选中项），启用后使用主色与加粗以高亮展示
+   */
+  active: {
+    type: Boolean,
+    default: false
   }
 } as const;
 
