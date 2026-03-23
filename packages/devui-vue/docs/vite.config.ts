@@ -18,8 +18,7 @@ export default defineConfig({
     exclude: ['lodash-es', 'mitt', 'async-validator', 'css-vars-ponyfill', 'rxjs', '@vueuse/core', '@floating-ui/dom', 'vue-router'],
   },
   server: {
-    // 监听所有网卡，便于通过局域网 IP 访问文档站
-    host: true,
+    host: '0.0.0.0',
     fs: {
       strict: false,
     },

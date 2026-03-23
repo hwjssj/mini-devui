@@ -24,8 +24,8 @@
   "module": "vue-devui.es.js",
   "style": "style.css",
   "scripts": {
-    "dev": "pnpm generate:theme && vitepress dev docs",
-    "dev:site": "vite --port 3010",
+    "dev": "pnpm generate:theme && vitepress dev docs --host 0.0.0.0",
+    "dev:site": "vite --port 3010 --host 0.0.0.0",
     "build": "pnpm generate:theme && node --max-old-space-size=8192 node_modules/vitepress/bin/vitepress.js build docs && cp public/* docs/.vitepress/dist/assets && cp docs/assets/* docs/.vitepress/dist/assets",
     "build:lib": "pnpm predev -- -e prod && pnpm build:components && pnpm release",
     "test": "jest --config jest.config.js",

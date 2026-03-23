@@ -10,10 +10,12 @@ const config = defineConfig({
   description: 'Vue DevUI 组件库',
   head,
   markdown,
-  // VitePress 开发服务器：允许通过本机 IP 访问
+  // VitePress 0.20 只合并此处 vite 配置，不会自动读取 docs/vite.config.ts
+  // 必须显式监听 0.0.0.0，否则仅本机 127.0.0.1 可访问
   vite: {
     server: {
-      host: true,
+      host: '0.0.0.0',
+      strictPort: false,
     },
   },
   locales: {
