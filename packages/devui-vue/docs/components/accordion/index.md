@@ -56,7 +56,7 @@ export default defineComponent({
         children: [{ title: 'Child Content 1' }, { title: 'Child Content 2' }, { title: 'Child Content ' }],
       },
       {
-        title: 'Content 2（This is a long sentence for option display.）',
+        title: 'Content 2',
         children: [
           { title: 'Child Content 1 (This is a long sentence for option display.)' },
           { title: 'Child Content 2' },
@@ -134,6 +134,20 @@ export default defineComponent({
   .basic-menu {
     width: 80%;
   }
+}
+.devui-accordion__item-title:not(.devui-accordion--disabled):hover{
+  border-radius:4px
+}
+.devui-accordion__menu-item > .devui-accordion__item-title {
+  padding-left:8px;
+  padding-right:10px;
+}
+.devui-accordion__menu-item{
+  font-size:14px
+}
+li.devui-accordion__item>.devui-accordion__item-title{
+  padding-left:28px;
+  padding-right:12px
 }
 </style>
 ```
